@@ -105,20 +105,31 @@ console.log(chalk.white(catSay));
 // jobs:
 //   build:
 //     runs-on: ubuntu-latest
-// steps:
-//   - uses: actions/checkout@v2
-//     with:
-//       persist-credentials: false
-//   - uses: actions/setup-node@v1
-//     with:
-//       node-version: "12.x"
-//   - run: npm install
-//   - run: npm run test
-//   - run: npm run semantic-release
-//     env:
-//       GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-//       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+//      steps:
+//         - uses: actions/checkout@v2
+//          with:
+//            persist-credentials: false
+//      - uses: actions/setup-node@v1
+//        with:
+//          node-version: "12.x"
+//      - run: npm install
+//      - run: npm run test
+//      - run: npm run semantic-release
+//        env:
+//          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+//          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+// Add plugins list to the release
+// "release": {
+//   "plugins": [
+//     "@semantic-release/commit-analyzer",
+//     "@semantic-release/release-notes-generator",
+//     "@semantic-release/changelog",
+//     "@semantic-release/npm",
+//     "@semantic-release/git",
+//     "@semantic-release/github"
+//   ]
+// },
 
 // Set package json version to 0.0.0 - we do not handle it
 
